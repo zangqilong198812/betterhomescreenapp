@@ -60,7 +60,42 @@
         titleEl.textContent = "Tutorial: " + fileName;
         metaEl.textContent = file;
 
-        marked.setOptions({ mangle: false, headerIds: false });
+        const baseUrl = new URL(file, window.location.href);
+        const resolveRelativeUrls = (container) => {
+          container.querySelectorAll("img[src], a[href]").forEach((node) => {
+            const attr = node.tagName === "IMG" ? "src" : "href";
+            const value = node.getAttribute(attr);
+            if (
+              !value ||
+              value.startsWith("http://") ||
+              value.startsWith("https://") ||
+              value.startsWith("data:") ||
+              value.startsWith("mailto:") ||
+              value.startsWith("#")
+            ) {
+              return;
+            }
+            try {
+              node.setAttribute(attr, new URL(value, baseUrl).toString());
+            } catch (error) {
+              console.warn("Unable to resolve URL", value, error);
+            }
+          });
+        };
+
+        const renderer = new marked.Renderer();
+        renderer.image = (href, title, text) => {
+          const resolved = new URL(href, baseUrl);
+          const titleAttr = title ? ` title="${title}"` : "";
+          const altAttr = text ? text : "";
+          return `<img src="${resolved}" alt="${altAttr}"${titleAttr} />`;
+        };
+
+        marked.setOptions({
+          mangle: false,
+          headerIds: false,
+          renderer
+        });
 
         fetch(file)
           .then((response) => {
@@ -70,7 +105,28 @@
             return response.text();
           })
           .then((markdown) => {
-            contentEl.innerHTML = marked.parse(markdown);
+            const looksLikeHtml =
+              /<!doctype html>/i.test(markdown) ||
+              /<html[\s>]/i.test(markdown) ||
+              /<body[\s>]/i.test(markdown);
+
+            if (looksLikeHtml) {
+              const parsed = new DOMParser().parseFromString(
+                markdown,
+                "text/html"
+              );
+              const extracted =
+                parsed.querySelector("article")?.innerHTML ||
+                parsed.querySelector("main")?.innerHTML ||
+                parsed.body?.innerHTML ||
+                markdown;
+              contentEl.innerHTML = extracted;
+              resolveRelativeUrls(contentEl);
+            } else {
+              contentEl.innerHTML = marked.parse(markdown);
+              resolveRelativeUrls(contentEl);
+            }
+
             metaEl.textContent = "Source: " + file;
           })
           .catch(() => {
