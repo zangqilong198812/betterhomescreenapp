@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial | minimalist</title>
+    <meta name="description" content="minimalist tutorial details." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="logo">minimalist</div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="legal">
+      <h1 id="tutorial-title">Tutorial</h1>
+      <p class="subtle" id="tutorial-meta">Loading...</p>
+      <div id="markdown-content" class="markdown-content"></div>
+      <p class="subtle">
+        <a href="index.html#get-started">Back to Get Started</a>
+      </p>
+    </main>
+
+    <footer>
+      <div class="container footer-links">
+        <span>© 2026 minimalist</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      const contentEl = document.getElementById("markdown-content");
+      const titleEl = document.getElementById("tutorial-title");
+      const metaEl = document.getElementById("tutorial-meta");
+
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get("file");
+
+      const isValidFile =
+        file &&
+        file.startsWith("Tutorial/") &&
+        file.endsWith(".md") &&
+        !file.includes("..");
+
+      if (!isValidFile) {
+        metaEl.textContent = "Invalid tutorial file.";
+        contentEl.textContent =
+          "Please choose a tutorial from the Get Started list.";
+      } else {
+        const fileName = file.split("/").pop();
+        titleEl.textContent = "Tutorial: " + fileName;
+        metaEl.textContent = file;
+
+        marked.setOptions({ mangle: false, headerIds: false });
+
+        fetch(file)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Unable to load the tutorial.");
+            }
+            return response.text();
+          })
+          .then((markdown) => {
+            contentEl.innerHTML = marked.parse(markdown);
+            metaEl.textContent = "Source: " + file;
+          })
+          .catch(() => {
+            metaEl.textContent = "Unable to load the tutorial.";
+            contentEl.textContent =
+              "Please check the tutorial link or try again later.";
+          });
+      }
+    </script>
+  </body>
+</html>
