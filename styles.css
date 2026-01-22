@@ -207,9 +207,8 @@ footer {
 
 .markdown-content img {
   display: block;
-  width: 100%;
+  width: auto;
   max-width: 520px;
-  max-height: 520px;
   height: auto;
   border-radius: 12px;
   border: 1px solid #ededed;
