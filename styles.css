@@ -262,4 +262,8 @@ footer {
   .hero-actions {
     flex-direction: column;
   }
+
+  .markdown-content img {
+    max-width: 100%;
+  }
 }
