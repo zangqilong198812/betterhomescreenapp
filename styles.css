@@ -134,6 +134,36 @@ header {
   margin-top: 24px;
 }
 
+.language-menu {
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid #e6e6e6;
+  background: #fafafa;
+  margin-top: 16px;
+}
+
+.language-option {
+  border: none;
+  background: transparent;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #444444;
+  cursor: pointer;
+}
+
+.language-option.is-active {
+  background: #111111;
+  color: #ffffff;
+}
+
+.tutorial-item.is-hidden {
+  display: none;
+}
+
 .tutorial-item {
   display: flex;
   flex-direction: column;
@@ -188,7 +218,7 @@ footer {
 .legal {
   max-width: 760px;
   margin: 0 auto;
-  padding: 72px 0;
+  padding: 72px 24px;
 }
 
 .markdown-content {
@@ -295,8 +325,14 @@ footer {
     padding: 14px 16px;
   }
 
+  .language-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   .legal {
-    padding: 56px 0;
+    padding: 56px 16px;
   }
 
   .markdown-content {

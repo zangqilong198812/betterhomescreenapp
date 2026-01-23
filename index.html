@@ -93,42 +93,66 @@
         <div class="container">
           <h2>Get Started</h2>
           <p>Choose a tutorial to learn how to customize your minimalist setup.</p>
+          <div class="language-menu" role="tablist" aria-label="Tutorial language">
+            <button class="language-option is-active" data-lang="en" type="button">
+              English
+            </button>
+            <button class="language-option" data-lang="zh" type="button">
+              中文
+            </button>
+            <button class="language-option" data-lang="ja" type="button">
+              日本語
+            </button>
+          </div>
           <div class="tutorial-list">
             <a
               class="tutorial-item"
               href="customicon_en.html"
+              data-lang="en"
             >
               ✨ Customize iPhone App Icons
             </a>
             <a
               class="tutorial-item"
               href="customicon_cn.html"
+              data-lang="zh"
             >
               ✨ 通过快捷指令自定义 App Icon
             </a>
             <a
               class="tutorial-item"
               href="customicon_jp.html"
+              data-lang="ja"
             >
               ✨ アプリアイコンのカスタマイズ方法
             </a>
             <a
               class="tutorial-item"
               href="automation_calendar.html"
+              data-lang="en"
             >
               ✨ Year Progress Calendar Wallpaper
             </a>
             <a
               class="tutorial-item"
               href="how_to_add_widgets.html"
+              data-lang="en"
             >
               ✨ How to Add Widgets
             </a>
             <a
               class="tutorial-item"
               href="add_widgets_cn.html"
+              data-lang="zh"
             >
               ✨ 如何添加小组件
+            </a>
+            <a
+              class="tutorial-item"
+              href="add_widgets_jp.html"
+              data-lang="ja"
+            >
+              ✨ ウィジェットの追加方法
             </a>
           </div>
         </div>
@@ -142,5 +166,26 @@
         <a href="terms.html">Terms of Use</a>
       </div>
     </footer>
+    <script>
+      const languageButtons = document.querySelectorAll(".language-option");
+      const tutorialItems = document.querySelectorAll(".tutorial-item");
+
+      const setLanguage = (lang) => {
+        languageButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.lang === lang);
+        });
+        tutorialItems.forEach((item) => {
+          item.classList.toggle("is-hidden", item.dataset.lang !== lang);
+        });
+      };
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          setLanguage(button.dataset.lang);
+        });
+      });
+
+      setLanguage("en");
+    </script>
   </body>
 </html>
