@@ -1,14 +1,29 @@
 # Configure Shortcuts for Automatic Wallpaper Changes
 
-## 1. Edit the Installed Quick Action
+## 1. Edit the Installed Shortcut
 
-In the Shortcuts app, open the recently installed quick action.
+In the Shortcuts app, open the shortcut you just installed.
 
-![](https://rtquickidea.oss-cn-beijing.aliyuncs.com/besttheme/TutorialPic/wallpapertutorial/en/IMG_0992-portrait.png)
+![](https://rtquickidea.oss-cn-beijing.aliyuncs.com/besttheme/TutorialPic/wallpapertutorial/en/IMG_1010-portrait.png)
+
+Search for **Wallpaper** in the action search bar.
+![](https://rtquickidea.oss-cn-beijing.aliyuncs.com/besttheme/TutorialPic/wallpapertutorial/en/IMG_1011-portrait.png)
+Tap to add it to the shortcut.
+
+* Here, you can choose to change both the Lock Screen and Home Screen wallpapers, but it is recommended to only select the Lock Screen wallpaper.
+
+![](https://rtquickidea.oss-cn-beijing.aliyuncs.com/besttheme/TutorialPic/wallpapertutorial/en/IMG_1012-portrait.png)
+
+![](https://rtquickidea.oss-cn-beijing.aliyuncs.com/besttheme/TutorialPic/wallpapertutorial/en/IMG_1014-portrait.png)
+
 
 ## 2. Configure the Lock Screen Wallpaper to Replace
 
-Since your phone may have multiple theme-based home screens, tap **Wallpaper** in the shortcuts and select the wallpaper you want to replace from the list.
+Tap the location indicated by the arrow.
+
+![](https://rtquickidea.oss-cn-beijing.aliyuncs.com/besttheme/TutorialPic/wallpapertutorial/en/IMG_0992-portrait.png)
+
+Since your phone may have multiple theme desktops, tap **Wallpaper** in the shortcut, then select the one you want to replace from the wallpaper list.
 
 ![](https://rtquickidea.oss-cn-beijing.aliyuncs.com/besttheme/TutorialPic/wallpapertutorial/cn/IMG_0987-portrait.png)
 
