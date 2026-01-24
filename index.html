@@ -10,25 +10,30 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-page="home">
     <header>
       <div class="container nav">
         <div class="logo">minimalist</div>
         <nav class="nav-links">
-          <a href="#features">Features</a>
-          <a href="#vision">Vision</a>
-          <a href="#get-started">Get Started</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
+          <a href="#features" data-i18n="nav.features">Features</a>
+          <a href="#vision" data-i18n="nav.vision">Vision</a>
+          <a href="#get-started" data-i18n="nav.getStarted">Get Started</a>
+          <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+          <a href="terms.html" data-i18n="nav.terms">Terms</a>
         </nav>
+        <div class="language-switch">
+          <button class="language-option" data-lang="en" type="button">EN</button>
+          <button class="language-option" data-lang="zh" type="button">中文</button>
+          <button class="language-option" data-lang="ja" type="button">日本語</button>
+        </div>
       </div>
     </header>
 
     <main>
       <section class="hero">
         <div class="container">
-          <h1>Minimal Desktop, Maximum Focus</h1>
-          <p>
+          <h1 data-i18n="hero.title">Minimal Desktop, Maximum Focus</h1>
+          <p data-i18n="hero.subtitle">
             minimalist delivers cohesive icons, widgets, and wallpapers that remove noise and keep only what matters.
           </p>
           <div class="hero-actions">
@@ -37,8 +42,10 @@
               href="https://apps.apple.com/app/id6757589367"
               target="_blank"
               rel="noopener noreferrer"
+              data-i18n="hero.primaryCta"
             >Get the App</a>
-            <a class="button secondary" href="#features">Explore Features</a>
+            <a class="button secondary" href="#features" data-i18n="hero.secondaryCta"
+              >Explore Features</a>
           </div>
           <div class="hero-preview">
             <img
@@ -52,28 +59,40 @@
 
       <section id="features" class="section">
         <div class="container">
-          <h2>Core Features</h2>
-          <p>Designed for clarity and efficiency, so your desktop stays calm and intentional.</p>
+          <h2 data-i18n="section.features.title">Core Features</h2>
+          <p data-i18n="section.features.subtitle">
+            Designed for clarity and efficiency, so your desktop stays calm and intentional.
+          </p>
           <div class="features">
             <div class="card">
-              <h3>Themed Icons</h3>
-              <p>Consistent icon packs that unify every app into one visual language.</p>
+              <h3 data-i18n="feature.icons.title">Themed Icons</h3>
+              <p data-i18n="feature.icons.body">
+                Consistent icon packs that unify every app into one visual language.
+              </p>
             </div>
             <div class="card">
-              <h3>Themed Widgets</h3>
-              <p>Widgets that match your theme for clean, readable information.</p>
+              <h3 data-i18n="feature.widgets.title">Themed Widgets</h3>
+              <p data-i18n="feature.widgets.body">
+                Widgets that match your theme for clean, readable information.
+              </p>
             </div>
             <div class="card">
-              <h3>Themed Wallpapers</h3>
-              <p>Curated wallpapers that align with icons and widgets for cohesion.</p>
+              <h3 data-i18n="feature.wallpapers.title">Themed Wallpapers</h3>
+              <p data-i18n="feature.wallpapers.body">
+                Curated wallpapers that align with icons and widgets for cohesion.
+              </p>
             </div>
             <div class="card">
-              <h3>Desktop Refresh</h3>
-              <p>Reshape your layout with minimal structure and fewer distractions.</p>
+              <h3 data-i18n="feature.refresh.title">Desktop Refresh</h3>
+              <p data-i18n="feature.refresh.body">
+                Reshape your layout with minimal structure and fewer distractions.
+              </p>
             </div>
             <div class="card">
-              <h3>Less Feed, More Flow</h3>
-              <p>Step away from noisy streams and return to focused work.</p>
+              <h3 data-i18n="feature.flow.title">Less Feed, More Flow</h3>
+              <p data-i18n="feature.flow.body">
+                Step away from noisy streams and return to focused work.
+              </p>
             </div>
           </div>
         </div>
@@ -81,8 +100,8 @@
 
       <section id="vision" class="section">
         <div class="container">
-          <h2>Our Vision</h2>
-          <p>
+          <h2 data-i18n="section.vision.title">Our Vision</h2>
+          <p data-i18n="section.vision.body">
             We believe your desktop should feel quiet, balanced, and purpose-built
             every time you unlock the screen.
           </p>
@@ -91,19 +110,10 @@
 
       <section id="get-started" class="section">
         <div class="container">
-          <h2>Get Started</h2>
-          <p>Choose a tutorial to learn how to customize your minimalist setup.</p>
-          <div class="language-menu" role="tablist" aria-label="Tutorial language">
-            <button class="language-option is-active" data-lang="en" type="button">
-              English
-            </button>
-            <button class="language-option" data-lang="zh" type="button">
-              中文
-            </button>
-            <button class="language-option" data-lang="ja" type="button">
-              日本語
-            </button>
-          </div>
+          <h2 data-i18n="section.tutorials.title">Get Started</h2>
+          <p data-i18n="section.tutorials.subtitle">
+            Choose a tutorial to learn how to customize your minimalist setup.
+          </p>
           <div class="tutorial-list">
             <a
               class="tutorial-item"
@@ -125,13 +135,6 @@
               data-lang="ja"
             >
               ✨ アプリアイコンのカスタマイズ方法
-            </a>
-            <a
-              class="tutorial-item"
-              href="automation_calendar.html"
-              data-lang="en"
-            >
-              ✨ Year Progress Calendar Wallpaper
             </a>
             <a
               class="tutorial-item"
@@ -183,30 +186,10 @@
     <footer>
       <div class="container footer-links">
         <span>© 2026 minimalist</span>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="terms.html" data-i18n="footer.terms">Terms of Use</a>
       </div>
     </footer>
-    <script>
-      const languageButtons = document.querySelectorAll(".language-option");
-      const tutorialItems = document.querySelectorAll(".tutorial-item");
-
-      const setLanguage = (lang) => {
-        languageButtons.forEach((button) => {
-          button.classList.toggle("is-active", button.dataset.lang === lang);
-        });
-        tutorialItems.forEach((item) => {
-          item.classList.toggle("is-hidden", item.dataset.lang !== lang);
-        });
-      };
-
-      languageButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          setLanguage(button.dataset.lang);
-        });
-      });
-
-      setLanguage("en");
-    </script>
+    <script src="i18n.js"></script>
   </body>
 </html>

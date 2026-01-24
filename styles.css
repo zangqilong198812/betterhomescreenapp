@@ -134,14 +134,13 @@ header {
   margin-top: 24px;
 }
 
-.language-menu {
+.language-switch {
   display: inline-flex;
   gap: 8px;
   padding: 6px;
   border-radius: 999px;
   border: 1px solid #e6e6e6;
   background: #fafafa;
-  margin-top: 16px;
 }
 
 .language-option {
@@ -325,7 +324,7 @@ footer {
     padding: 14px 16px;
   }
 
-  .language-menu {
+  .language-switch {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

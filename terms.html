@@ -10,102 +10,113 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-page="terms">
     <header>
       <div class="container nav">
         <div class="logo">minimalist</div>
         <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="privacy.html">Privacy</a>
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
         </nav>
+        <div class="language-switch">
+          <button class="language-option" data-lang="en" type="button">EN</button>
+          <button class="language-option" data-lang="zh" type="button">中文</button>
+          <button class="language-option" data-lang="ja" type="button">日本語</button>
+        </div>
       </div>
     </header>
 
     <main class="legal">
-      <h1>Terms of Use</h1>
-      <p class="subtle">Last Updated: Jan 20, 2026</p>
-      <p>
+      <h1 data-i18n="page.terms.heading">Terms of Use</h1>
+      <p class="subtle" data-i18n="page.terms.updated">Last Updated: Jan 20, 2026</p>
+      <p data-i18n="terms.intro">
         Welcome to minimalist. By accessing or using the Service, you agree to
         these Terms of Use ("Terms"). If you do not agree, do not use the
         Service.
       </p>
 
-      <h2>About the Service</h2>
-      <p>
+      <h2 data-i18n="terms.service.title">About the Service</h2>
+      <p data-i18n="terms.service.body">
         minimalist provides themed icons, widgets, and wallpapers to help you
         create a calm, minimal desktop experience. Features may change over
         time.
       </p>
 
-      <h2>Eligibility</h2>
-      <p>
+      <h2 data-i18n="terms.eligibility.title">Eligibility</h2>
+      <p data-i18n="terms.eligibility.body">
         You must be at least 13 years old to use the Service. If you are under
         18, you must have permission from a parent or legal guardian.
       </p>
 
-      <h2>License</h2>
-      <p>
+      <h2 data-i18n="terms.license.title">License</h2>
+      <p data-i18n="terms.license.body">
         We grant you a limited, non-exclusive, non-transferable, revocable
         license to use the Service for personal, non-commercial purposes,
         subject to these Terms.
       </p>
 
-      <h2>Restrictions</h2>
+      <h2 data-i18n="terms.restrictions.title">Restrictions</h2>
       <ul>
-        <li>Do not copy, resell, or distribute assets without permission.</li>
-        <li>Do not reverse engineer, decompile, or attempt to bypass security.</li>
-        <li>Do not use the Service for unlawful or harmful activities.</li>
+        <li data-i18n="terms.restrictions.item1">
+          Do not copy, resell, or distribute assets without permission.
+        </li>
+        <li data-i18n="terms.restrictions.item2">
+          Do not reverse engineer, decompile, or attempt to bypass security.
+        </li>
+        <li data-i18n="terms.restrictions.item3">
+          Do not use the Service for unlawful or harmful activities.
+        </li>
       </ul>
 
-      <h2>Third-Party Services</h2>
-      <p>
+      <h2 data-i18n="terms.thirdparty.title">Third-Party Services</h2>
+      <p data-i18n="terms.thirdparty.body">
         The Service may rely on third-party tools for hosting, analytics, or
         support. Your use of those services is subject to their terms and
         privacy policies.
       </p>
 
-      <h2>Payments and Subscriptions</h2>
-      <p>
+      <h2 data-i18n="terms.payments.title">Payments and Subscriptions</h2>
+      <p data-i18n="terms.payments.body">
         If paid features are offered, prices and billing terms will be
         disclosed at purchase. Subscriptions, if any, are managed through the
         app store and are subject to the store's payment policies.
       </p>
 
-      <h2>Intellectual Property</h2>
-      <p>
+      <h2 data-i18n="terms.ip.title">Intellectual Property</h2>
+      <p data-i18n="terms.ip.body">
         The Service and all related content are owned by minimalist or its
         licensors and protected by intellectual property laws. All rights not
         expressly granted are reserved.
       </p>
 
-      <h2>Disclaimer</h2>
-      <p>
+      <h2 data-i18n="terms.disclaimer.title">Disclaimer</h2>
+      <p data-i18n="terms.disclaimer.body">
         The Service is provided "as is" and "as available" without warranties of
         any kind. We do not guarantee that the Service will be uninterrupted or
         error-free.
       </p>
 
-      <h2>Limitation of Liability</h2>
-      <p>
+      <h2 data-i18n="terms.liability.title">Limitation of Liability</h2>
+      <p data-i18n="terms.liability.body">
         To the maximum extent permitted by law, minimalist will not be liable
         for indirect, incidental, special, consequential, or punitive damages
         arising out of your use of the Service.
       </p>
 
-      <h2>Termination</h2>
-      <p>
+      <h2 data-i18n="terms.termination.title">Termination</h2>
+      <p data-i18n="terms.termination.body">
         We may suspend or terminate access to the Service if you violate these
         Terms or if required to do so by law.
       </p>
 
-      <h2>Changes to These Terms</h2>
-      <p>
+      <h2 data-i18n="terms.changes.title">Changes to These Terms</h2>
+      <p data-i18n="terms.changes.body">
         We may update these Terms from time to time. The updated version will be
         posted on this page with the revised date.
       </p>
 
-      <h2>Contact Us</h2>
-      <p>
+      <h2 data-i18n="terms.contact.title">Contact Us</h2>
+      <p data-i18n-html="terms.contact.body">
         If you have questions about these Terms, please email
         <a href="mailto:hello@minimalist.app">hello@minimalist.app</a>.
       </p>
@@ -114,9 +125,10 @@
     <footer>
       <div class="container footer-links">
         <span>© 2026 minimalist</span>
-        <a href="index.html">Back to Home</a>
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="index.html" data-i18n="nav.home">Back to Home</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
       </div>
     </footer>
+    <script src="i18n.js"></script>
   </body>
 </html>
