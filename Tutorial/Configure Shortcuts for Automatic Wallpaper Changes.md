@@ -27,6 +27,9 @@ Since your phone may have multiple theme desktops, tap **Wallpaper** in the shor
 
 ![](https://rtquickidea.oss-cn-beijing.aliyuncs.com/besttheme/TutorialPic/wallpapertutorial/cn/IMG_0987-portrait.png)
 
+"Please note here: Click the arrow to turn off the display preview and crop to the subject."
+![](https://p.ipic.vip/dldoxa.jpg)
+
 ## 3. Create an Automation
 
 After making the necessary changes, tap **Automation** in the Shortcuts app. Then tap the **New Automation** button.
